@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+	
+	<!------------------------------------ Navbar------------------------------------- -->
+		<nav class="navbar bg-primary">
+		
+		<ul class= "nav">
+		
+		<li class="nav-item">
+		<a class="ticket-tracker text-light" href="#"> Ticket Tracker Application</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="text-light btn-sm mb-3" th:href="@{'/'}" >Tickets</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="text-light btn-sm mb-3" th:href="@{'/newTicket'}" >New Ticket</a>
+		</li>
+		
+		</ul>
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"> </span>
+		</button>
+
+		</nav>
+	<!-- ------------------------------content------------------------------------- -->
+	<div class = "container" align="center">
+	
+	<br>
+	<br>
+	<br>
+	<!-- -------------------------------title----------------------------------------- -->
+		<div align="center">
+			<h1> View Ticket Details</h1>
+			<br />	
+		</div>
+	<!-- -------------------------------view form----------------------------------- -->	
+		<div class="col-sm-12">
+			
+			<div class="list-group col-sm-12">
+ 				
+   					<div class="d-flex w-100 justify-content-between">
+     					 <h5 class="mb-1">Ticket Number</h5>
+    					
+    				</div>
+    				<p class="mb-1" th:text = "*{ticket.id}"></p>
+    				
+    				<div class="d-flex w-100 justify-content-between">
+     					 <h5 class="mb-1">Title</h5>
+    					
+    				</div>
+    				<p class="mb-1" th:text = "*{ticket.ticketTitle}"></p>
+    				
+    				<div class="d-flex w-100 justify-content-between">
+     					 <h5 class="mb-1">Ticket Description</h5>
+    					
+    				</div>
+    				<p class="mb-1" th:text = "*{ticket.ticketDescription}"></p>
+    				
+    				<div class="d-flex w-100 justify-content-between">
+     					 <h5 class="mb-1">Creation Date</h5>
+    					
+    				</div>
+    				<p class="mb-1" th:text = "*{ticket.ticketCreationDate}"></p>
+    				
+    				<div class="d-flex w-100 justify-content-between">
+     					 <h5 class="mb-1">Ticket Content</h5>
+    					
+    				</div>
+    				<p class="mb-1" th:text = "*{ticket.content}"></p>
+ 				
+		</div>
+			
+			
+		</div>
+	
+	</div>
+</body>
+</html>

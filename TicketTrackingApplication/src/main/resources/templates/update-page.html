@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+	
+	<!------------------------------------ Navbar------------------------------------- -->
+		<nav class="navbar bg-primary">
+		
+		<ul class= "nav">
+		
+		<li class="nav-item">
+		<a class="ticket-tracker text-light" href="#"> Ticket Tracker Application</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="text-light btn-sm mb-3" th:href="@{'/'}" >Tickets</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="text-light btn-sm mb-3" th:href="@{'/newTicket'}" >New Ticket</a>
+		</li>
+		
+		</ul>
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"> </span>
+		</button>
+
+		</nav>
+	<!-- ------------------------------content------------------------------------- -->
+	<div class = "container" align="center">
+	
+	<br>
+	<br>
+	<br>
+	<!-- -------------------------------title----------------------------------------- -->
+		<div align="center">
+			<h1>Edit Ticket</h1>
+			<br />	
+		</div>
+	<!-- -------------------------------update form----------------------------------- -->	
+		<div class="col-sm-12">
+			<form action="#" th:action="@{/updateTicket}" th:object="${ticket}"
+				method="post">
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Title</label>
+						<td><input type="hidden" th:field="*{id}" /> <input
+							type="text" th:field="*{ticketTitle}" class="form-control"
+							placeholder="Edit ticket title" /></td>
+					</tr>
+				</div>
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Short Description</label>
+						<td>
+						
+						<input type="text" th:field="*{ticketDescription}"
+							class="form-control align-baseline" rows="3" placeholder="Update ticket description" style="height: 100px"/></td>
+					</tr>
+				</div>
+				
+				<div align="left">
+					<tr>
+						<label class="form-label">Content</label>
+						<td><input type="text" th:field="*{content}" class="form-control"
+							placeholder="Update content" style="height: 100px" /></td>
+					</tr>
+				</div>
+				
+				<br>
+				
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-primary">Submit</button>
+					</td>
+				</tr>
+			</form>
+		</div>
+	
+	</div>
+</body>
+</html>
